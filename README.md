@@ -1,3 +1,13 @@
+### `add .env file to the root of the project and add these lines:` fails to minify
+REACT_APP_FIREBASE_API_KEY=  "AIzaSyAPcvTo5rT1r2LFS-4jfGlLox82mtyfegQ"
+REACT_APP_FIREBASE_AUTH_DOMAIN= "namava-bfa38.firebaseapp.com"
+REACT_APP_FIREBASE_PROJECT_ID= "namava-bfa38"
+REACT_APP_FIREBASE_STORAGE_BUCKET= "namava-bfa38.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID="1092488546204"
+REACT_APP_FIREBASE_APP_ID="1:1092488546204:web:348e05c27264587bfdaa59"
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +78,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### `add .env file to the root of the project and add these lines:` fails to minify
+REACT_APP_FIREBASE_API_KEY=  "AIzaSyAPcvTo5rT1r2LFS-4jfGlLox82mtyfegQ"
+REACT_APP_FIREBASE_AUTH_DOMAIN= "namava-bfa38.firebaseapp.com"
+REACT_APP_FIREBASE_PROJECT_ID= "namava-bfa38"
+REACT_APP_FIREBASE_STORAGE_BUCKET= "namava-bfa38.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID="1092488546204"
+REACT_APP_FIREBASE_APP_ID="1:1092488546204:web:348e05c27264587bfdaa59"
+
