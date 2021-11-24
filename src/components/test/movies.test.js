@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {render} from '@testing-library/react'
 import MovieItem from '../movies/movieItem'
 import Loading from '../layouts/Loading'
 it('renders without crashing MovieItem', () =>{
