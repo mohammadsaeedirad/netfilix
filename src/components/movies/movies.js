@@ -4,18 +4,19 @@ import MovieItem from './movieItem'
 import Pagination from '../layouts/Pagination'
 import arrow from "../../img/arrow.png"
 import Header from '../layouts/header'
-import Loading from '../layouts/Loading';
 
  const Movies = () => {
      
     const netfilixContext =useContext(NetfilixContext)
-    const {movies ,searchResult,searchMovies,loading }=netfilixContext;
+    const {movies ,searchResult,searchMovies,getMovies }=netfilixContext;
     console.log(searchResult)
     const deleteSearch = () =>{
         searchMovies()
     }
   
-        
+    useEffect(() => {     
+        getMovies()  
+    },[]);
         return (
             <Fragment>
                 <Header />

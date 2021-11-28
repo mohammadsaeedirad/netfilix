@@ -4,6 +4,7 @@ import netfilix4 from "../../img/netfilix4.jpg";
 import netfilix3 from "../../img/netfilix3.jpg";
 import netfilix from "../../img/net.png";
 import Particles from 'react-particles-js';
+import Link from 'react-router-dom';
 
  const About = () => {
     return (
