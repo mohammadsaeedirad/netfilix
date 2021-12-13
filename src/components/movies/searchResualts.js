@@ -1,39 +1,26 @@
-import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../../cotext/AuthContext"
-import { Link} from "react-router-dom"
+import React,{useContext,useEffect} from 'react'
+import NetfilixContext from '../../cotext/netfilix/netfilixContext'
+import MovieItem from './movieItem'
+import arrow from "../../img/arrow.png"
+import Header from '../layouts/header'
 import Particles from 'react-particles-js';
 
+const SearchResualts = () => {
 
-export default function ForgotPassword() {
-  const emailRef = useRef()
-  const {currentUser ,resetPassword } = useAuth()
-  const [error, setError] = useState("")
-  const [message, setMessage] = useState("")
-  const [loading, setLoading] = useState(false)
+    const netfilixContext =useContext(NetfilixContext)
+    const {searchResult,text}=netfilixContext;
+    useEffect(() => {
+      console.log(text)
+      
+    },[])
 
 
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-
-    try {
-      setError("")
-      setLoading(true)
-      await resetPassword(emailRef.current.value)
-      setMessage("Check your inbox for further instructions")
-
-    } catch {
-      setError("This email does not exist")
-    }
-
-    setLoading(false)
-  }
-
-  return (
-    <>
-    <div st className="container-fluid">
-    <Particles
+    
+    return (
+        <div>
+            
+          <div st className="container-fluid">
+            <Particles
                  
                  params={{
                    background: {
@@ -114,38 +101,21 @@ export default function ForgotPassword() {
                  }}
                />
     </div>
+        <div>
+               <div  className="container movie-container">
+                 <div className="row d-flex justify-content-center">             
+                      <h3  id="res" > search results: <span style={{float:"right",color:"#dc3545",cursor:"pointer"}} ><img style={{width:"50px",height:"50px"}} src={arrow} alt="" /> </span> </h3>
 
-        <div className="forgot-container">
-        <Card className="bg-dark justify-content-center w-100" >
-        <Card.Body>
-          <h2 className="text-center mb-5">Login</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-          <Form onSubmit={handleSubmit}>
-              <Form.Group id="email">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" ref={emailRef} required />
-              </Form.Group>
-
-              <br/>
-              {loading ? <Button disabled="true" className="w-100 btn-danger" type="submit">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                <span> Reset Password</span>
-              </Button> :
-              <Button className="w-100 btn-danger " type="submit">
-                Reset Password
-              </Button>}
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
+                        { searchResult.map(res => <MovieItem id={res.id} key={res.id} movie={res} />)}
+                  </div>  
+              </div>
         </div>
 
-    </>
-  )
+                   
+       
+        </div>
+
+    )
 }
+
+export default SearchResualts

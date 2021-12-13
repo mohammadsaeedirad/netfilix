@@ -1,5 +1,5 @@
 import React from 'react';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import ReactDOM from 'react-dom';
@@ -12,5 +12,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-serviceWorker.register();
+// serviceWorker.register();
 

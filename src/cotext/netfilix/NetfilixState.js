@@ -5,10 +5,9 @@ import axios from 'axios';
 import{
     GET_MOVIES,
     SEARCH_MOVIES,
-    SET_ALERT,
     SET_LOADING,
-    REMOVE_ALERT,
-    GET_MOVIE
+    GET_MOVIE,
+    SET_TEXT 
 }from '../types';
  const NetfilixState = props => {
 
@@ -31,9 +30,11 @@ import{
         setLoading();
 
       const res=await axios.get(`https://moviesapi.ir/api/v1/movies?page=${page}` );
+      console.log(res.data.metadata)
         dispatch({
             type:GET_MOVIES,
-            payload:res.data.data,        
+            payload:res.data.data,      
+            payload2:res.data.metadata,     
         })
       };
       const getMovie =async (id) => {
@@ -64,7 +65,13 @@ import{
                   type:SET_LOADING,    
               })
             };
-        
+            const setText = (txt) => {
+                const text =txt
+                dispatch({
+                    type:SET_TEXT , 
+                    payload:text   
+                })
+              };       
 
     return (
         <NetfilixContext.Provider
@@ -75,11 +82,13 @@ import{
                     movie:state.movie,
                     loading:state.loading,
                     alert:state.alert,
+                    text:state.text,
                     searchResult:state.searchResult,
                     getMovies,
                     getMovie,
                     searchMovies,
-                    setLoading
+                    setLoading,
+                    setText
             
                 }}
             >

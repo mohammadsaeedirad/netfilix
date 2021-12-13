@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb( 33,37,41) !important;
+  background-color: #1A1A1D !important;
 
 }
 
@@ -117,13 +117,13 @@ html{
 
 
 .paddingTB60 {padding:60px 0px 60px 0px;}
-.gray-bg {background: #F1F1F1 !important;}
-.about-title h1 {color: #535353; font-size:45px;font-weight:600;}
+.gray-bg {}
+.about-title h1 {color: white; font-size:45px;font-weight:600;}
 .about-title span {color: #AF0808; font-size:45px;font-weight:700;}
-.about-title h3 {color: #535353; font-size:23px;margin-bottom:24px;}
-.about-title p {color: #7a7a7a;line-height: 1.8;margin: 0 0 15px;}
+.about-title h3 {color: white; font-size:23px;margin-bottom:24px;}
+.about-title p {color: white;line-height: 1.8;margin: 0 0 15px;}
 .about-paddingB {padding-bottom: 12px;}
-.about-img {padding-left: 57px;}
+.about-img {padding-left: 5px;padding-right: 5px;padding-top: 8px;}
 
 /* Social Icons */
 .about-icons {margin:48px 0px 48px 0px ;}
@@ -167,14 +167,7 @@ html{
   top: 13px;
 }
 
-.page-link:hover{
-  border-color: #dc3545
-}
-.page-link:focus{
-  border-color: #dc3545;
-  box-shadow: 0 0 0 0.25rem #dc3545 !important;
 
-}
 
 .login-container{
   position: absolute;
@@ -215,4 +208,19 @@ html{
   right: 1%;
   opacity: 1;
 
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-color{
+  background-color:#1A1A1D 
+}
+
+.auto-compelete{
+  text-decoration: none !important;
+  display:block !important;
 }

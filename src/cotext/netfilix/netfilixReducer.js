@@ -2,20 +2,19 @@ import{
     GET_MOVIES,
     GET_MOVIE,
     SEARCH_MOVIES,
-    SET_ALERT,
     SET_LOADING,
-    REMOVE_ALERT
-  
+    SET_TEXT 
 
 }from '../types';
 
 
-export default (state,action) =>{
+   const Reducer = (state,action) => {
     switch(action.type){
         case GET_MOVIES:
             return{
                 ...state,
                 movies:action.payload,
+                metaData:action.payload2,
                 loading:false     
             }
         case GET_MOVIE:
@@ -30,6 +29,11 @@ export default (state,action) =>{
                 searchResult:action.payload,   
                 loading:false     
             }
+        case SET_TEXT :
+            return{
+                ...state,            
+                text:action.payload     
+            }    
         case SET_LOADING:
             return{
                 ...state,
@@ -43,3 +47,5 @@ export default (state,action) =>{
     }
 
 }
+
+export default Reducer;

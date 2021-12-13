@@ -8,7 +8,7 @@ import { HashLink as Link } from 'react-router-hash-link';
  const Header = () => {
 
     const {currentUser} = useAuth()
-
+   
     return (
         <div >
           <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">

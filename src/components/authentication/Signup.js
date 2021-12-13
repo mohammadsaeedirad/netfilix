@@ -36,12 +36,13 @@ export default function Signup() {
 
   return (
     <>
-               <Particles
+   <div st className="container-fluid">
+      <Particles
                  
                  params={{
                    background: {
                      color: {
-                       value: "rgb( 33,37,41) ",
+                       value: "#1A1A1D  ",
                      },
                    },
                    fpsLimit: 60,
@@ -75,7 +76,7 @@ export default function Signup() {
                    },
                    particles: {
                      color: {
-                       value: "#ffffff",
+                       value:"#ffffff"
                      },
                      links: {
                        color: "#dc3545",
@@ -116,6 +117,7 @@ export default function Signup() {
                    detectRetina: true,
                  }}
                />
+    </div>
 
         <div className="signup-container">
         <Card className="bg-dark justify-content-center w-100" >

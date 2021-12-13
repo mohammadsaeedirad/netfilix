@@ -1,4 +1,4 @@
-import React,{useContext,useEffect,useState} from 'react'
+import React,{useContext,useEffect} from 'react'
 import Loading from '../layouts/Loading';
 import { HashLink as Link } from 'react-router-hash-link';
 import NetfilixContext from '../../cotext/netfilix/netfilixContext';
@@ -23,12 +23,13 @@ import Particles from 'react-particles-js';
     }else{
         return (
             <div>
-                <Particles
+     <div st className="container-fluid">
+    <Particles
                  
                  params={{
                    background: {
                      color: {
-                       value: "rgb( 33,37,41) ",
+                       value: "#1A1A1D  ",
                      },
                    },
                    fpsLimit: 60,
@@ -62,7 +63,7 @@ import Particles from 'react-particles-js';
                    },
                    particles: {
                      color: {
-                       value: "#ffffff",
+                       value:"#ffffff"
                      },
                      links: {
                        color: "#dc3545",
@@ -103,7 +104,8 @@ import Particles from 'react-particles-js';
                    detectRetina: true,
                  }}
                />
-                <div className="movie-container">
+    </div>
+                <div className="movie-container" >
                     <div className="row" >
     
                         <div className="col-md-3" >
@@ -121,14 +123,14 @@ import Particles from 'react-particles-js';
                             <p className="overflow" >Writers: <span className="badge bg-secondary" >{writer}</span> </p>
     
                             <br/>
-                            <span style={{marginRight:'1%'}} class="badge bg-info">{year}</span>  
-                            <span style={{marginRight:'1%'}}  class="badge bg-danger">{country}</span>    
-                            <span style={{marginRight:'1%'}}  class="badge bg-secondary">{runtime}</span>        
+                            <span style={{marginRight:'1%'}} className="badge bg-info">{year}</span>  
+                            <span style={{marginRight:'1%'}}  className="badge bg-danger">{country}</span>    
+                            <span style={{marginRight:'1%'}}  className="badge bg-secondary">{runtime}</span>        
                 
                             <span className="badge bg-success">{rated}</span>
                             
                         
-                            <Link  to="/"><button className="movie-back-btn btn btn-danger"  type="button" >back</button> </Link>
+                            <Link  to="/"><button  className="movie-back-btn btn btn-danger"  type="button" >back</button> </Link>
     
                         </div>
                 

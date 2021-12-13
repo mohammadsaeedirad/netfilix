@@ -2,11 +2,12 @@ import React,{Fragment} from 'react';
 import { AuthProvider } from "./cotext/AuthContext"
 import NavBar from './components/layouts/navBar';
 import About from './components/layouts/about';
-import Home from './components/layouts/home';
 import Movie from './components/movies/movie';
+import Home from './components/layouts/home';
 import ForgotPassword from './components/authentication/ForgotPassword'
 import Signup from './components/authentication/Signup.js';
 import Login from './components/authentication/Login.js';
+import SearchResualts from './components/movies/searchResualts';
 import NetfilixState  from './cotext/netfilix/NetfilixState';
 
 import { BrowserRouter as Router ,Switch , Route} from 'react-router-dom';
@@ -15,9 +16,12 @@ import { BrowserRouter as Router ,Switch , Route} from 'react-router-dom';
 
 
 
+
 const App =() => {
   
 
+
+  
   return (
   <NetfilixState>
 
@@ -25,9 +29,11 @@ const App =() => {
         <Fragment >        
               <AuthProvider>
                <NavBar />
-                <Switch>
+                <Switch >
                  <div className="mt-2">
-                  <Route exact  path="/" component={Home} />
+            
+                  <Route exact  path="/" component={Home} />                
+                  <Route exact  path="/searchResualts/:text" component={SearchResualts} />
                   <Route exact  path="/login" component={Login} />
                   <Route exact  path="/signup" component={Signup} />
                   <Route path="/forgot-password" component={ForgotPassword} />

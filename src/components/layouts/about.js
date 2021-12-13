@@ -1,10 +1,11 @@
-import React from 'react'
 import netfilix2 from "../../img/netfilix2.jpg";
 import netfilix4 from "../../img/netfilix4.jpg";
 import netfilix3 from "../../img/netfilix3.jpg";
 import netfilix from "../../img/net.png";
 import Particles from 'react-particles-js';
-import Link from 'react-router-dom';
+import  React ,{ Suspense, lazy } from 'react';
+
+const More = lazy(() => import('./more/more'))
 
  const About = () => {
     return (
@@ -14,7 +15,7 @@ import Link from 'react-router-dom';
                  params={{
                    background: {
                      color: {
-                       value: "rgb( 33,37,41) ",
+                       value: "#1A1A1D  ",
                      },
                    },
                    fpsLimit: 60,
@@ -89,11 +90,11 @@ import Link from 'react-router-dom';
                    detectRetina: true,
                  }}
                />
-       <div classnName="about-section paddingTB60 gray-bg " >
+       <div className="about-section paddingTB60 gray-bg " >
           <div className="about-container">
-            <div classnName="row">
+            <div className="row">
            
-                    <div classnName="about-title clearfix">
+                    <div className="about-title clearfix">
                         <h1  >About <span>us</span> <span style={{float:"right"}} ><img  style={{width:"100px",height:"70px"}}  src={netfilix} alt="" /></span> </h1>
 
                         <br/>
@@ -104,26 +105,26 @@ import Link from 'react-router-dom';
                         <div className="row" >
 
                         <div className="col-md-4" >
-                               <div classnName="about-img">
+                               <div className="about-img">
                                  <img className="rounded" style={{width:"100%",height:"400px"}} src={netfilix3} alt="" />
                                </div>
                             </div>
                             <br/>
                             <div className="col-md-4" >
-                               <div classnName="about-img">
+                               <div className="about-img">
                                  <img className="rounded" style={{width:"100%",height:"400px"}} src={netfilix2} alt="" />
                                </div>
                             </div>
                             <br/>
                             <div className="col-md-4" >
-                               <div classnName="about-img">
+                               <div className="about-img">
                                  <img className="rounded" style={{width:"100%",height:"400px"}} src={netfilix4} alt="" />
                                </div>
                             </div>
                             <br/>
                         </div>
                         <br/>
-                        <p classnName="about-paddingB">Netflix has debuted a new branding campaign in 27 countries bearing the tagline “One Story Away.”
+                        <p className="about-paddingB">Netflix has debuted a new branding campaign in 27 countries bearing the tagline “One Story Away.”
 
                         In a blog post Thursday, VP of Brand Eric Pallotta wrote, “Stories are powerful. The TV shows and films we watch bring out all sorts of different emotions, give us perspectives we’ve never seen before and even make us feel closer to each other.”
 
@@ -141,7 +142,16 @@ import Link from 'react-router-dom';
               
               
             </div>
+            <div style={{marginTop:"80px"}}>
+
+            <Suspense fallback={<div>Loading...</div>}>
+                <More />
+             </Suspense>  
+            </div>
+         
          </div>
+
+   
       </div>
     </>
     )
