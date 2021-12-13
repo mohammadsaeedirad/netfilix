@@ -1,5 +1,5 @@
 
-import  React ,{ Suspense, lazy } from 'react';
+import  React  from 'react';
 import Pagination from '../layouts/Pagination'
 import Movies from '../movies/movies';
 
